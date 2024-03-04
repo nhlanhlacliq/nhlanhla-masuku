@@ -22,7 +22,7 @@ const variants = {
 const Header = () => {
   return (
     <div className="flex bg-black bottom-0">
-      <div className=" m-auto w-full h-96 pt-36 bg-black">
+      <div className=" m-auto w-full h-96 py-36 bg-black flex items-center justify-center">
         <motion.svg
           width="542"
           height="97"

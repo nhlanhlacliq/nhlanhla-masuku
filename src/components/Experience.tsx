@@ -1,7 +1,23 @@
+import Header from "./ui/Header";
+import Section from "./ui/Section";
+import Type from "./ui/Type";
+
 const experiences = [
   {
+    position: "React Native and React Developer",
+    company: "Dial A Techie",
+    duration: "2024 - Present",
+    details: [
+      "Developed and maintained cross-platform mobile applications using React Native.",
+      "Collaborated with UI/UX designers to create seamless and engaging user experiences.",
+      "Implemented state management using Redux and Context API for efficient data handling.",
+      "Optimized application performance and ensured compatibility across different devices and platforms.",
+      "Worked closely with backend developers to integrate APIs and ensure smooth data flow.",
+    ],
+  },
+  {
     position: "Freelance UI/UX Designer and Full Stack Developer",
-    company: "",
+    company: "Nhlanhla Masuku",
     duration: "June 2022 - Present",
     details: [
       "Developed and designed the front end of a warehouse dashboard application.",
@@ -18,40 +34,53 @@ const experiences = [
       "Designed and created internal and client graphics using Adobe products.",
     ],
   },
-  // Add more experiences as needed
+  {
+    position: "Automotive Technician & Service Advisor",
+    company: "Jaguar Land Rover",
+    duration: "Mar 2015 - Sep 2020",
+    details: [
+      "Developed an automation script for reporting vehicle issues, enhancing technician productivity.",
+      "Diagnosed and repaired electrical and mechanical vehicle faults, improving customer satisfaction.",
+      "Coordinated with technicians and parts department to ensure parts availability and managed dealership schedules.",
+    ],
+  },
 ];
 
 const Experience = () => {
   return (
-    <div id='experience' className={styles.experience}>
-      <h2 className={styles.heading}>Experience</h2>
+    <Section id='experience' style='flex-col'>
+      <Header title='Experience' />
+
       <div className={styles.grid}>
         {experiences.map((exp, index) => (
           <div key={index} className={styles.card}>
-            <h3 className={styles.position}>{exp.position}</h3>
-            <p className={styles.company}>{exp.company}</p>
-            <p className={styles.duration}>{exp.duration}</p>
+            <Type className={styles.duration}>{exp.duration}</Type>
+            <Type className={styles.position}>{exp.position}</Type>
+            <Type variant='highlight' className={styles.company}>
+              {exp.company}
+            </Type>
             <ul className={styles.details}>
               {exp.details.map((detail, idx) => (
-                <li key={idx}>{detail}</li>
+                <li key={idx}>
+                  <Type className={styles.detail}>{detail}</Type>
+                </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
 export default Experience;
 
 const styles = {
-  experience: "bg-white py-16 px-8 lg:px-16",
-  heading: "text-3xl md:text-4xl font-bold text-center mb-12",
-  grid: "grid grid-cols-1 md:grid-cols-2 gap-8",
-  card: "bg-gray-100 p-6 rounded-lg shadow-md",
-  position: "text-xl font-bold mb-2",
-  company: "text-gray-700 mb-2",
-  duration: "text-gray-500 mb-4",
-  details: "list-disc pl-5 space-y-2",
+  grid: "grid grid-cols-1 md:grid-cols-2 gap-10",
+  duration: "text-sm mb-0 opacity-75",
+  position: "text-l font-bold mb-3 leading-normal",
+  company: "mb-3",
+  card: "my-3",
+  details: "list-disc pl-5 space-y-2 text-sm",
+  detail: "pl-5 mb-0",
 };

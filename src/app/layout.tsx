@@ -26,7 +26,7 @@ export default function RootLayout({
         )}
       >
         <Nav />
-        <main className='lg:ml-1/4 lg:w-1/2'>{children}</main>
+        <main className='lg:ml-1/2 lg:w-1/2'>{children}</main>
       </body>
     </html>
   );

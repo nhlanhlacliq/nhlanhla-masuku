@@ -1,19 +1,50 @@
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-const Nav = () => {
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
+const Links = [
+  {
+    name: "About",
+    to: "about",
+  },
+  {
+    name: "Experience",
+    to: "experience",
+  },
+  {
+    name: "Projects",
+    to: "projects",
+  },
+];
+
+type Props = {
+  style?: string;
+};
+
+const Nav = ({ style }: Props) => {
   return (
-    <nav className={styles.nav}>
+    <nav className={cn(styles.nav, style)}>
       <div className={styles.container}>
-        <Link href='/' className={styles.mainLink}>
-          Nhlanhla Masuku
-        </Link>
         <div className={styles.linkContainer}>
-          <Link href='/#projects' className={styles.link}>
-            Projects
-          </Link>
-          <Link href='/#contact' className={styles.link}>
-            Contact
-          </Link>
+          {Links.map((item, i) => (
+            <div
+              key={i}
+              className='flex group items-center gap-4 cursor-pointer'
+            >
+              <div className='w-8 bg-background h-0.5 rounded-sm group-hover:w-12 transition-all' />
+              <ScrollLink
+                to={item.to}
+                smooth={true}
+                duration={500}
+                className={styles.link}
+                activeClass={styles.active}
+                spy={true}
+              >
+                {item.name}
+              </ScrollLink>
+            </div>
+          ))}
         </div>
       </div>
     </nav>
@@ -23,9 +54,10 @@ const Nav = () => {
 export default Nav;
 
 const styles = {
-  nav: "hidden lg:block lg:w-1/4 bg-gray-800 text-white h-screen fixed",
-  container: "container mx-auto py-4",
+  nav: "",
+  container: "py-4",
   mainLink: "text-2xl font-bold block mb-8",
   linkContainer: "flex flex-col space-y-4",
   link: "hover:underline",
+  active: "text-accent-2",
 };

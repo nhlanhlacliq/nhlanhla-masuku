@@ -3,6 +3,16 @@ import Header from "./ui/Header";
 import Section from "./ui/Section";
 import Type from "./ui/Type";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Image from "next/image";
+
 const projects = [
   {
     title: "estConnect",
@@ -10,7 +20,17 @@ const projects = [
       "An app for estate residents to book amenities, request concierge services, and manage access. Includes an admin dashboard for posting events and managing the estate.",
     technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
     link: "",
-    images: [],
+    images: [
+      "/images/ec1.png",
+      "/images/ec2.png",
+      "/images/ec3.png",
+      "/images/ec4.png",
+      "/images/ec5.png",
+      "/images/ec6.png",
+      "/images/ec7.png",
+      "/images/ec8.png",
+    ],
+    type: "mobile",
   },
   {
     title: "MyPension",
@@ -18,7 +38,16 @@ const projects = [
       "An app for South Africans to check and withdraw funds available through the government's 2 pot savings system, ensuring easy access to pension details and transactions.",
     technologies: ["React Native", "GraphQL", "TypeScript"],
     link: "",
-    images: [],
+    images: [
+      "/images/mp1.png",
+      "/images/mp2.png",
+      "/images/mp3.png",
+      "/images/mp4.png",
+      "/images/mp5.png",
+      "/images/mp6.png",
+      "/images/mp7.png",
+    ],
+    type: "mobile",
   },
   {
     title: "Dawao",
@@ -26,7 +55,18 @@ const projects = [
       "Comprehensive React dashboard for warehouses to track deliveries, manage customers, drivers, and warehouse duties, enhancing operational efficiency.",
     technologies: ["React", "Redux", "Node.js", "MongoDB"],
     link: "",
-    images: [],
+    images: [
+      "/images/d1.png",
+      "/images/d2.png",
+      "/images/d3.png",
+      "/images/d4.png",
+      "/images/d5.png",
+      "/images/d6.png",
+      "/images/d7.png",
+      "/images/d8.png",
+      "/images/d9.png",
+    ],
+    type: "web",
   },
   {
     title: "DoesDeals",
@@ -45,6 +85,17 @@ const projects = [
   // Add more projects as needed
 ];
 
+const ProjectTitle = ({ title }: { title: string }) => {
+  return (
+    <div className='flex gap-4 hover:gap-8 transition-all cursor-pointer hover:animate-out'>
+      <Type className={styles.title}>{title}</Type>
+      <div className='mt-0.5'>
+        <MoveRight />
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <Section id='projects' style='flex-col'>
@@ -52,14 +103,45 @@ const Projects = () => {
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <div key={index} className={styles.card}>
-            <a href={project.link} target='_blank'>
-              <div className='flex gap-4 hover:gap-8 transition-all cursor-pointer hover:animate-out'>
-                <Type className={styles.title}>{project.title}</Type>
-                <div className='mt-0.5'>
-                  <MoveRight />
-                </div>
-              </div>
-            </a>
+            {project.link ? (
+              <a href={project.link} target='_blank'>
+                <ProjectTitle title={project.title} />
+              </a>
+            ) : (
+              <Dialog>
+                <DialogTrigger>
+                  <ProjectTitle title={project.title} />
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>{project.title}</DialogTitle>
+                    <DialogDescription>
+                      {project.title}'s link cannot be shared just yet. It's
+                      coming soon though!
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div
+                    className={
+                      project.type === "mobile"
+                        ? styles.imageContainerMobile
+                        : styles.imageContainerWeb
+                    }
+                  >
+                    {/* @ts-expect-error */}
+                    {project.images.map((image, idx) => (
+                      <Image
+                        key={idx}
+                        src={image}
+                        alt={image}
+                        className='hover:scale-150 transition-all'
+                        width={project.type === "mobile" ? 1200 : 400}
+                        height={project.type === "mobile" ? 1200 : 400}
+                      />
+                    ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
+            )}
             <Type className={styles.description}>{project.description}</Type>
             <div className={styles.techList}>
               {project.technologies.map((tech, idx) => (
@@ -87,4 +169,7 @@ const styles = {
   badge:
     "bg-accent-2-muted rounded-full items-center justify-center items-center px-3 py-1",
   tech: "mb-0 text-xs text-accent-2 animate-pulse",
+
+  imageContainerMobile: "grid grid-cols-3 gap-2 py-8",
+  imageContainerWeb: "grid grid-cols-1 gap-16 p-8",
 };

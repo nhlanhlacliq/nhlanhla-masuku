@@ -82,4 +82,10 @@
   .bg-backdrop {
     -webkit-backdrop-filter: blur(5px);
   }
+  .active-nav {
+    padding-left: 4px;
+  }
+  .active-nav-width {
+    width: 4rem;
+  }
 }

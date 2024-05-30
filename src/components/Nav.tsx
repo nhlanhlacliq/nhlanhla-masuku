@@ -45,7 +45,6 @@ const Nav = ({ style }: Props) => {
               >
                 <div className='w-full bg-background h-0.5 rounded-sm transition-all' />
               </Link>
-              {/* @ts-expect-error */}
               <Link
                 to={item.to}
                 smooth={true}

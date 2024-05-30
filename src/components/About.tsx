@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Header from "./ui/Header";
 import Section from "./ui/Section";
 import Type from "./ui/Type";

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { MoveRight } from "lucide-react";
 import Header from "./ui/Header";
 import Section from "./ui/Section";

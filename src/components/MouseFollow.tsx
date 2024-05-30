@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-const MouseFollow = ({ children }) => {
+const MouseFollow = ({ children }: { children: any }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: any) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 

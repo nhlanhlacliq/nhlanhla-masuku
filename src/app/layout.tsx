@@ -21,12 +21,11 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={cn(
-          "min-h-screen lg:flex lg:flex-row bg-gradient-to-bl from-foreground/95 to-foreground",
+          "min-h-screen bg-gradient-to-bl from-slate-900 via-black to-slate-900 max-w-screen-xl lg:mx-auto",
           inter.className
         )}
       >
-        <Nav />
-        <main className='lg:ml-1/2 lg:w-1/2'>{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

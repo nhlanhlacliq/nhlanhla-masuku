@@ -10,7 +10,7 @@ const experiences = [
     details: [
       "Developed and maintained cross-platform mobile applications using React Native.",
       "Collaborated with UI/UX designers to create seamless and engaging user experiences.",
-      "Implemented state management using Redux and Context API for efficient data handling.",
+      "Implemented state management using relevant libraries and Context API for efficient data handling.",
       "Optimized application performance and ensured compatibility across different devices and platforms.",
       "Worked closely with backend developers to integrate APIs and ensure smooth data flow.",
     ],
@@ -21,9 +21,9 @@ const experiences = [
     company: "Nhlanhla Masuku",
     duration: "June 2022 - Present",
     details: [
-      "Developed and designed the front end of a warehouse dashboard application.",
-      "Developed and maintained a full-stack e-commerce platform using JavaScript, React, Next.js, and Sanity.io.",
-      "Collaborated with clients to create intuitive UI designs, graphics, logos, and website designs using Figma and Adobe products.",
+      "Developed the front end of a warehouse dashboard application using React ecosystem.",
+      "Developed and maintained a full-stack e-commerce-like platform using Next.js and a Sanity.io back-end",
+      "Collaborated with clients to create intuitive UI designs, graphics and logos using Figma and Adobe products.",
     ],
   },
   {
@@ -31,7 +31,7 @@ const experiences = [
     company: "RITZA",
     duration: "July 2021 - March 2022",
     details: [
-      "Created articles, blog posts, and documentation for software engineering and machine learning-focused clients.",
+      "Created articles, blog posts, and documentation for software engineering and machine learning-focused clients such as Sentry.io, Labdigital, Garden.io, Okera, IGotAnOffer, etc.",
       "Designed and created internal and client graphics using Adobe products.",
     ],
     link: "https://ritza.co/",

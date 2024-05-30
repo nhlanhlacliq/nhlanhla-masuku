@@ -17,8 +17,8 @@ const projects = [
   {
     title: "estConnect",
     description:
-      "An app for estate residents to book amenities, request concierge services, and manage access. Includes an admin dashboard for posting events and managing the estate.",
-    technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
+      "An app for estate residents to book amenities, request concierge services, and manage estate access. Includes an admin dashboard for posting events, handling user reports and managing the estate.",
+    technologies: ["React Native", "JWT token", "React Ecosystem", "REST API"],
     link: "",
     images: [
       "/images/ec1.png",
@@ -36,7 +36,7 @@ const projects = [
     title: "MyPension",
     description:
       "An app for South Africans to check and withdraw funds available through the government's 2 pot savings system, ensuring easy access to pension details and transactions.",
-    technologies: ["React Native", "GraphQL", "TypeScript"],
+    technologies: ["React Native", "OTPs", "JWT", "TypeScript"],
     link: "",
     images: [
       "/images/mp1.png",
@@ -53,7 +53,7 @@ const projects = [
     title: "Dawao",
     description:
       "Comprehensive React dashboard for warehouses to track deliveries, manage customers, drivers, and warehouse duties, enhancing operational efficiency.",
-    technologies: ["React", "Redux", "Node.js", "MongoDB"],
+    technologies: ["React", "Zustand", "Google APIs", "Schema Validation"],
     link: "",
     images: [
       "/images/d1.png",
@@ -71,15 +71,15 @@ const projects = [
   {
     title: "DoesDeals",
     description:
-      "Responsive e-commerce platform using JavaScript, React, Next.js, and Sanity.io to aggregate deals, primarily focusing on Stellenbosch and expanding countrywide.",
-    technologies: ["React", "Next.js", "Sanity.io", "JavaScript"],
+      "Responsive e-commerce platform using Next.js, and Sanity.io to aggregate deals, primarily focusing on Stellenbosch and expanding countrywide. Currently doing UX/UI redesign.",
+    technologies: ["Next.js", "Sanity.io", "HTML", "CSS"],
     link: "http://doesdeals.co.za/",
   },
   {
     title: "DeltaMax Auto",
     description:
       "A professional site for an automotive workshop using React, TypeScript, and Figma, showcasing services and improving customer engagement.",
-    technologies: ["React", "TypeScript", "Figma"],
+    technologies: ["React", "Vite", "TypeScript", "Figma"],
     link: "https://deltamaxauto.com/",
   },
   // Add more projects as needed
@@ -133,7 +133,7 @@ const Projects = () => {
                         key={idx}
                         src={image}
                         alt={image}
-                        className='hover:scale-150 transition-all'
+                        className='hover:scale-150 transition-all rounded-sm shadow-sm'
                         width={project.type === "mobile" ? 1200 : 400}
                         height={project.type === "mobile" ? 1200 : 400}
                       />
@@ -170,6 +170,6 @@ const styles = {
     "bg-accent-2-muted rounded-full items-center justify-center items-center px-3 py-1",
   tech: "mb-0 text-xs text-accent-2 animate-pulse",
 
-  imageContainerMobile: "grid grid-cols-3 gap-2 py-8",
-  imageContainerWeb: "grid grid-cols-1 gap-16 p-8",
+  imageContainerMobile: "grid grid-cols-3 gap-4 lg:gap-8 py-4 lg:py-8",
+  imageContainerWeb: "grid grid-cols-2 gap-4 lg:gap-16 p-4 lg:p-8",
 };

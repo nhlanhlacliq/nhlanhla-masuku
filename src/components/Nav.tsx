@@ -1,7 +1,10 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+"use client";
 
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { cn } from "@/lib/utils";
+// import Link from "next/link";
+
+import { Link } from "react-scroll";
+// animateScroll
 
 const Links = [
   {
@@ -32,8 +35,18 @@ const Nav = ({ style }: Props) => {
               key={i}
               className='flex group items-center gap-4 cursor-pointer'
             >
-              <div className='w-8 bg-background h-0.5 rounded-sm group-hover:w-12 transition-all' />
-              <ScrollLink
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={500}
+                activeClass={styles.activeWidth}
+                className='w-8 group-hover:w-16'
+                spy={true}
+              >
+                <div className='w-full bg-background h-0.5 rounded-sm transition-all' />
+              </Link>
+              {/* @ts-expect-error */}
+              <Link
                 to={item.to}
                 smooth={true}
                 duration={500}
@@ -42,7 +55,7 @@ const Nav = ({ style }: Props) => {
                 spy={true}
               >
                 {item.name}
-              </ScrollLink>
+              </Link>
             </div>
           ))}
         </div>
@@ -58,6 +71,7 @@ const styles = {
   container: "py-4",
   mainLink: "text-2xl font-bold block mb-8",
   linkContainer: "flex flex-col space-y-4",
-  link: "hover:underline",
-  active: "text-accent-2",
+  link: "hover:underline peer",
+  active: "active-nav",
+  activeWidth: "active-nav-width",
 };

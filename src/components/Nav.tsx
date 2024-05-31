@@ -33,14 +33,14 @@ const Nav = ({ style }: Props) => {
           {Links.map((item, i) => (
             <div
               key={i}
-              className='flex group items-center gap-4 cursor-pointer'
+              className='flex group items-center gap-4 cursor-pointer w-fit'
             >
               <Link
                 to={item.to}
                 smooth={true}
                 duration={500}
                 activeClass={styles.activeWidth}
-                className='w-8 group-hover:w-16'
+                className='w-8 opacity-50 group-hover:w-16 group-hover:opacity-100 transition-all'
                 spy={true}
               >
                 <div className='w-full bg-background h-0.5 rounded-sm transition-all' />
@@ -70,7 +70,7 @@ const styles = {
   container: "py-4",
   mainLink: "text-2xl font-bold block mb-8",
   linkContainer: "flex flex-col space-y-4",
-  link: "hover:underline peer",
+  link: "hover:underline peer opacity-50 hover:opacity-100 transition-all",
   active: "active-nav",
   activeWidth: "active-nav-width",
 };

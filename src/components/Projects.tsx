@@ -79,7 +79,7 @@ const projects = [
   {
     title: "DeltaMax Auto",
     description:
-      "A professional site for an automotive workshop using React, TypeScript, and Figma, showcasing services and improving customer engagement.",
+      "A professional site for an automotive workshop using React, TypeScript, and Figma, showcasing services and improving customer engagement. Co-founded the company and built the brand.",
     technologies: ["React", "Vite", "TypeScript", "Figma"],
     link: "https://deltamaxauto.com/",
   },

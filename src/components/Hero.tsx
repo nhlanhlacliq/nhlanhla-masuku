@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import Section from "./ui/Section";
 import Type from "./ui/Type";
 import Nav from "./Nav";
@@ -31,6 +31,16 @@ const Hero = () => {
           className={styles.iconLink}
         >
           <Linkedin size={32} className={styles.icon} />
+        </a>
+        <a href='tel:+27844900875' target='_blank' className={styles.iconLink}>
+          <Phone size={32} className={styles.icon} />
+        </a>
+        <a
+          href='mailto:nhlanhlabmasuku@gmail.com'
+          target='_blank'
+          className={styles.iconLink}
+        >
+          <Mail size={32} className={styles.icon} />
         </a>
       </div>
     </Section>

@@ -84,8 +84,10 @@
   }
   .active-nav {
     padding-left: 4px;
+    opacity: 100;
   }
   .active-nav-width {
     width: 4rem;
+    opacity: 100;
   }
 }

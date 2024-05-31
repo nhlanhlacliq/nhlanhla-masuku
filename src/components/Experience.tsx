@@ -1,3 +1,4 @@
+import { MoveRight } from "lucide-react";
 import Header from "./ui/Header";
 import Section from "./ui/Section";
 import Type from "./ui/Type";
@@ -56,28 +57,31 @@ const Experience = () => {
 
       <div className={styles.grid}>
         {experiences.map((exp, index) => (
-          <div key={index} className={styles.card}>
-            <div className='lg:w-1/4 pr-2'>
-              <Type className={styles.duration}>{exp.duration}</Type>
-            </div>
-            <div className='lg:w-3/4'>
-              <Type className={styles.position}>{exp.position}</Type>
-              <div className='hover:-ml-2 transition-all cursor-pointer'>
-                <a href={exp.link} target='_blank'>
+          <a href={exp.link} key={index} target='_blank'>
+            <div className={styles.card}>
+              <div className='lg:w-1/4 pr-2'>
+                <Type className={styles.duration}>{exp.duration}</Type>
+              </div>
+              <div className='lg:w-3/4'>
+                <Type className={styles.position}>{exp.position}</Type>
+                <div className='flex gap-4'>
                   <Type variant='highlight' className={styles.company}>
                     {exp.company}
                   </Type>
-                </a>
+                  <div className='hidden group-hover:block group-hover:animate-in transition-all'>
+                    <MoveRight />
+                  </div>
+                </div>
+                <ul className={styles.details}>
+                  {exp.details.map((detail, idx) => (
+                    <li key={idx}>
+                      <Type className={styles.detail}>{detail}</Type>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className={styles.details}>
-                {exp.details.map((detail, idx) => (
-                  <li key={idx}>
-                    <Type className={styles.detail}>{detail}</Type>
-                  </li>
-                ))}
-              </ul>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </Section>
@@ -90,8 +94,8 @@ const styles = {
   grid: "grid grid-cols-1 gap-10",
   duration: "text-sm mb-0 opacity-75",
   position: "text-l font-bold mb-3 leading-normal",
-  company: "mb-3",
-  card: "my-3 lg:flex lg:flex-row",
+  company: "mb-3 group-hover:opacity-100",
+  card: "my-3 lg:flex lg:flex-row opacity-90 transition-all hover:opacity-100 group hover cursor-pointer hover:bg-slate-900/30 rounded-sm -m-6 p-6",
   details: "list-disc pl-5 space-y-2 text-sm",
   detail: "pl-5 mb-0",
 };

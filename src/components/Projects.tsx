@@ -13,6 +13,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
+import { ReactNode } from "react";
 
 const projects = [
   {
@@ -86,12 +87,66 @@ const projects = [
   // Add more projects as needed
 ];
 
-const ProjectTitle = ({ title }: { title: string }) => {
+const RenderDialog = ({
+  project,
+  projectCard,
+}: {
+  project: any;
+  projectCard: ReactNode;
+}) => {
   return (
-    <div className='flex gap-4 hover:gap-8 transition-all cursor-pointer hover:animate-out'>
-      <Type className={styles.title}>{title}</Type>
-      <div className='mt-0.5'>
-        <MoveRight />
+    <Dialog>
+      <DialogTrigger>
+        <ProjectCard project={project} />
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{project.title}</DialogTitle>
+          <DialogDescription>
+            {project.title}'s link cannot be shared just yet. It's coming soon
+            though!
+          </DialogDescription>
+        </DialogHeader>
+        <div
+          className={
+            project.type === "mobile"
+              ? styles.imageContainerMobile
+              : styles.imageContainerWeb
+          }
+        >
+          {/* @ts-expect-error */}
+          {project.images.map((image, idx) => (
+            <Image
+              key={idx}
+              src={image}
+              alt={image}
+              className='hover:scale-150 transition-all rounded-sm shadow-sm'
+              width={project.type === "mobile" ? 1200 : 400}
+              height={project.type === "mobile" ? 1200 : 400}
+            />
+          ))}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+const ProjectCard = ({ project }: { project: any }) => {
+  return (
+    <div className={styles.card}>
+      <div className='flex gap-4 group-hover:gap-8 transition-all cursor-pointer hover:animate-out'>
+        <Type className={styles.title}>{project.title}</Type>
+        <div className='mt-0.5 group-hover:opacity-100 opacity-50'>
+          <MoveRight />
+        </div>
+      </div>
+      <Type className={styles.description}>{project.description}</Type>
+      <div className={styles.techList}>
+        {project.technologies.map((tech, idx) => (
+          <div key={idx} className={styles.badge}>
+            <Type className={styles.tech}>{tech}</Type>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -103,55 +158,19 @@ const Projects = () => {
       <Header title='Projects' />
       <div className={styles.grid}>
         {projects.map((project, index) => (
-          <div key={index} className={styles.card}>
+          <>
             {project.link ? (
               <a href={project.link} target='_blank'>
-                <ProjectTitle title={project.title} />
+                <ProjectCard key={index} project={project} />
               </a>
             ) : (
-              <Dialog>
-                <DialogTrigger>
-                  <ProjectTitle title={project.title} />
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>{project.title}</DialogTitle>
-                    <DialogDescription>
-                      {project.title}'s link cannot be shared just yet. It's
-                      coming soon though!
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div
-                    className={
-                      project.type === "mobile"
-                        ? styles.imageContainerMobile
-                        : styles.imageContainerWeb
-                    }
-                  >
-                    {/* @ts-expect-error */}
-                    {project.images.map((image, idx) => (
-                      <Image
-                        key={idx}
-                        src={image}
-                        alt={image}
-                        className='hover:scale-150 transition-all rounded-sm shadow-sm'
-                        width={project.type === "mobile" ? 1200 : 400}
-                        height={project.type === "mobile" ? 1200 : 400}
-                      />
-                    ))}
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <RenderDialog
+                key={index}
+                project={project}
+                projectCard={<ProjectCard project={project} />}
+              />
             )}
-            <Type className={styles.description}>{project.description}</Type>
-            <div className={styles.techList}>
-              {project.technologies.map((tech, idx) => (
-                <div key={idx} className={styles.badge}>
-                  <Type className={styles.tech}>{tech}</Type>
-                </div>
-              ))}
-            </div>
-          </div>
+          </>
         ))}
       </div>
     </Section>
@@ -162,9 +181,9 @@ export default Projects;
 
 const styles = {
   grid: "grid grid-cols-1",
-  card: "my-3",
-  title: "text-l font-bold mb-4",
-  description: "text-sm mb-5 ",
+  card: "my-3 group peer cursor-pointer hover:bg-slate-900/30 rounded-sm -m-6 p-6 opacity-90 hover:opacity-100",
+  title: "text-l font-bold mb-4 group-hover:text-accent-2",
+  description: "text-sm mb-5 text-left",
 
   techList: "flex flex-wrap flex-row gap-2 mb-8",
   badge:

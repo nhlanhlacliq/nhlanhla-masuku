@@ -142,7 +142,7 @@ const ProjectCard = ({ project }: { project: any }) => {
       </div>
       <Type className={styles.description}>{project.description}</Type>
       <div className={styles.techList}>
-        {project.technologies.map((tech, idx) => (
+        {project.technologies.map((tech: any, idx: number) => (
           <div key={idx} className={styles.badge}>
             <Type className={styles.tech}>{tech}</Type>
           </div>

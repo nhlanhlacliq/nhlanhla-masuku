@@ -54,6 +54,5 @@ const About = () => {
 export default About;
 
 const styles = {
-  conte
   text: "opacity-80 mb-5 text-pretty",
 };

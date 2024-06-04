@@ -10,9 +10,9 @@ const About = () => {
 
       <div className={styles.content}>
         <Type className={styles.text}>
-          I discovered my love for technology as a kid breaking apart RC cars to
-          figure out how they worked. I nurtured this curiosity while working
-          with cars at{" "}
+          I discovered my love for technology breaking apart RC cars to figure
+          out how they worked. I nurtured this curiosity while working with cars
+          at{" "}
           <strong>
             <a href='https://www.jaguarlandrover.com/' target='_blank'>
               Jaguar Land Rover
@@ -30,8 +30,8 @@ const About = () => {
               Software Engineering Bootcamp
             </a>{" "}
           </strong>
-          to deepen my skills. It was intense, but it opened doors to a whole
-          new world of coding and creativity. I also dipped my toes into{" "}
+          to deepen my skills. It was intense, but it opened doors to a new
+          world of coding and creativity. I also dipped my toes into{" "}
           <strong>
             <a href='https://ritza.co/' target='_blank'>
               technical writing
@@ -43,8 +43,8 @@ const About = () => {
 
         <Type className={styles.text}>
           Now, I'm freelancing, turning ideas into reality for clients. From
-          designing user-friendly apps to crafting engaging websites, I'm all
-          about making tech work for everyday people.
+          designing user-friendly apps to crafting engaging websites, I'm about
+          making tech work for everyday people.
         </Type>
       </div>
     </Section>

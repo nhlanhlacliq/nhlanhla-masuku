@@ -17,5 +17,5 @@ export default Header;
 
 const styles = {
   stickyHeader:
-    "sticky lg:relative top-0 backdrop-blur-sm bg-backdrop lg:backdrop-blur-none -mx-8 px-8 py-3 mb-8",
+    "sticky lg:relative top-0 backdrop-blur-sm bg-backdrop lg:backdrop-blur-none -mx-8 px-8 py-3 mb-8 z-50",
 };

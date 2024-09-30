@@ -6,14 +6,16 @@ import Nav from "./Nav";
 const Hero = () => {
   return (
     <Section id='#' style={styles.section}>
-      <div>
+      <div className='md:max-w-none lg:max-w-[440px] xl:max-w-none'>
         <Type variant='title'>Nhlanhla Masuku</Type>
-        <Type variant='subtitle'>Frontend Developer </Type>
+        <Type variant='subtitle'>Fullstack Developer </Type>
         <div className='lg:mt-1'>
-          <Type variant='highlight'>Javascript - React / React Native</Type>
+          <Type variant='highlight'>
+            Javascript - React / React Native, NodeJS
+          </Type>
         </div>
         <Type className='text-background/75'>
-          Mostly Front-end. But, I can Design, Build (Fullstack) and Ship.
+          Mostly Front-end. But, I can Design & Build (including mobile).
         </Type>
       </div>
       <Nav style={styles.nav} />

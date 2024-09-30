@@ -6,8 +6,8 @@ import Type from "./ui/Type";
 const experiences = [
   {
     position: "React Native and React Developer",
-    company: "Dial A Techie",
-    duration: "2024 - Present",
+    company: "Areura Tech",
+    duration: "2022 - Present",
     details: [
       "Developed and maintained cross-platform mobile applications using React Native.",
       "Collaborated with UI/UX designers to create seamless and engaging user experiences.",
@@ -15,7 +15,7 @@ const experiences = [
       "Optimized application performance and ensured compatibility across different devices and platforms.",
       "Worked closely with backend developers to integrate APIs and ensure smooth data flow.",
     ],
-    link: "https://www.dialatechie.co.za/",
+    // link: "https://www.dialatechie.co.za/",
   },
   {
     position: "Freelance UI/UX Designer and Full Stack Developer",

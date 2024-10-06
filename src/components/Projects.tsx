@@ -31,6 +31,7 @@ const projects = [
       "/images/ec6.png",
       "/images/ec7.png",
       "/images/ec8.png",
+      "/images/ec9.png",
     ],
     type: "mobile",
   },

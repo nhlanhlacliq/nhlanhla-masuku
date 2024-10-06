@@ -2,9 +2,11 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import { headers } from "next/headers";
 // import Nav from "@/components/Nav";
 
 export default function Home() {
+  headers(); // force dynamic behaviour (no caching)
   return (
     <div className='lg:flex'>
       <div className='lg:w-1/2'>

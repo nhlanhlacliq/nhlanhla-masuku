@@ -156,7 +156,7 @@ const ProjectCard = ({ project }: { project: any }) => {
 const Projects = () => {
   return (
     <Section id='projects' style='flex-col'>
-      <Header title='Projects' />
+      <Header title='Recent Work' />
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <>

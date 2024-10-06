@@ -16,7 +16,7 @@ const Links = [
     to: "experience",
   },
   {
-    name: "Projects",
+    name: "Work",
     to: "projects",
   },
 ];

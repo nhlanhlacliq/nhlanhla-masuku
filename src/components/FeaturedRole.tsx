@@ -1,7 +1,7 @@
-import { ImageIcon } from "lucide-react";
 import Header from "./ui/Header";
 import Section from "./ui/Section";
 import Type from "./ui/Type";
+import ImageCarousel from "./ImageCarousel";
 
 const highlights = [
   "Designed and built responsive web applications using React, Next.js, and TypeScript, ensuring accessibility and optimal user experience across devices",
@@ -25,16 +25,47 @@ const techStack = [
   "GitHub Actions",
 ];
 
+// ─── Add new images here ────────────────────────────────
+const projectImages = [
+  { src: "/images/GF1.png", alt: "LOR — Screenshot 1" },
+  { src: "/images/GF2.png", alt: "LOR — Screenshot 2" },
+  // { src: "/images/d1.png", alt: "Project screenshot" },
+  // { src: "/images/d2.png", alt: "Project screenshot" },
+  // { src: "/images/d3.png", alt: "Project screenshot" },
+  // { src: "/images/d4.png", alt: "Project screenshot" },
+  // { src: "/images/d5.png", alt: "Project screenshot" },
+  // { src: "/images/d6.png", alt: "Project screenshot" },
+  // { src: "/images/d7.png", alt: "Project screenshot" },
+  // { src: "/images/d8.png", alt: "Project screenshot" },
+  // { src: "/images/d9.png", alt: "Project screenshot" },
+  // { src: "/images/ec1.png", alt: "Project screenshot" },
+  // { src: "/images/ec2.png", alt: "Project screenshot" },
+  // { src: "/images/ec3.png", alt: "Project screenshot" },
+  // { src: "/images/ec4.png", alt: "Project screenshot" },
+  // { src: "/images/ec5.png", alt: "Project screenshot" },
+  // { src: "/images/ec6.png", alt: "Project screenshot" },
+  // { src: "/images/ec7.png", alt: "Project screenshot" },
+  // { src: "/images/ec8.png", alt: "Project screenshot" },
+  // { src: "/images/ec9.png", alt: "Project screenshot" },
+  // { src: "/images/mp1.png", alt: "Project screenshot" },
+  // { src: "/images/mp2.png", alt: "Project screenshot" },
+  // { src: "/images/mp3.png", alt: "Project screenshot" },
+  // { src: "/images/mp4.png", alt: "Project screenshot" },
+  // { src: "/images/mp5.png", alt: "Project screenshot" },
+  // { src: "/images/mp6.png", alt: "Project screenshot" },
+  // { src: "/images/mp7.png", alt: "Project screenshot" },
+];
+
 const FeaturedRole = () => {
   return (
-    <Section id='featured' style='flex-col'>
-      <Header title='Current Work' />
+    <Section id="featured" style="flex-col">
+      <Header title="Current Work" />
 
       <div className={styles.card}>
         <div className={styles.cardHeader}>
           <div>
             <Type className={styles.role}>Full Stack Developer</Type>
-            <Type variant='highlight' className={styles.company}>
+            <Type variant="highlight" className={styles.company}>
               LOR
             </Type>
             <Type className={styles.duration}>2022 — Present</Type>
@@ -42,8 +73,8 @@ const FeaturedRole = () => {
         </div>
 
         <Type className={styles.description}>
-          Developing healthcare technology solutions focused on improving patient
-          outcomes and operational efficiency through user-centered web
+          Developing healthcare technology solutions focused on improving
+          patient outcomes and operational efficiency through user-centered web
           applications. Working in close partnership with designers, backend
           developers, and stakeholders to build compassionate, human-centered
           software.
@@ -65,15 +96,7 @@ const FeaturedRole = () => {
           ))}
         </div>
 
-        {/* Image placeholder — replace with actual LOR screenshots */}
-        <div className={styles.imagePlaceholder}>
-          <div className={styles.placeholderInner}>
-            <ImageIcon size={32} className='text-foreground/20 mb-2' />
-            <Type className='text-foreground/30 text-sm mb-0'>
-              Project screenshots coming soon
-            </Type>
-          </div>
-        </div>
+        <ImageCarousel images={projectImages} />
       </div>
     </Section>
   );
@@ -95,7 +118,4 @@ const styles = {
   techList: "flex flex-wrap gap-2 mb-6",
   badge:
     "bg-accent-2-muted text-accent-2 text-xs px-3 py-1 rounded-full font-medium",
-  imagePlaceholder:
-    "mt-4 rounded-lg border-2 border-dashed border-foreground/10 bg-foreground/[0.02]",
-  placeholderInner: "flex flex-col items-center justify-center py-12 px-4",
 };

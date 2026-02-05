@@ -5,46 +5,35 @@ import Type from "./ui/Type";
 
 const experiences = [
   {
-    position: "React Native and React Developer",
-    company: "Areura Tech",
-    duration: "2022 - Present",
+    position: "Freelance UI/UX Designer & Full Stack Developer",
+    company: "Self-Employed",
+    duration: "2020 — 2022",
     details: [
-      "Developed and maintained cross-platform mobile applications using React Native.",
-      "Collaborated with UI/UX designers to create seamless and engaging user experiences.",
-      "Implemented state management using relevant libraries and Context API for efficient data handling.",
-      "Optimized application performance and ensured compatibility across different devices and platforms.",
-      "Worked closely with backend developers to integrate APIs and ensure smooth data flow.",
-    ],
-    // link: "https://www.dialatechie.co.za/",
-  },
-  {
-    position: "Freelance UI/UX Designer and Full Stack Developer",
-    company: "Nhlanhla Masuku",
-    duration: "June 2022 - Present",
-    details: [
-      "Developed the front end of a warehouse dashboard application using React ecosystem.",
-      "Developed and maintained a full-stack e-commerce-like platform using Next.js and a Sanity.io back-end",
-      "Collaborated with clients to create intuitive UI designs, graphics and logos using Figma and Adobe products.",
+      "Built full-stack applications using React, Next.js, and Vue.js with focus on user experience and performance.",
+      "Designed and implemented responsive, accessible web interfaces aligned with client brand guidelines using Figma and Adobe.",
+      "Integrated third-party platforms including Sanity.io CMS for content management capabilities.",
+      "Established CI/CD pipelines and managed hosting infrastructure for reliable application deployment.",
     ],
   },
   {
-    position: "Technical Writer (Software engineering and Machine learning)",
+    position: "Technical Writer",
     company: "RITZA",
-    duration: "July 2021 - March 2022",
+    duration: "2021 — 2022",
     details: [
-      "Created articles, blog posts, and documentation for software engineering and machine learning-focused clients such as Sentry.io, Labdigital, Garden.io, Okera, IGotAnOffer, etc.",
-      "Designed and created internal and client graphics using Adobe products.",
+      "Researched and wrote clear, concise technical documentation for developer tools and platforms including Sentry.io, Garden.io, and others.",
+      "Developed practical software projects and code examples to demonstrate development concepts.",
+      "Utilized data science tools (Python, Pandas, NumPy, Matplotlib) for creating technical visualizations.",
     ],
     link: "https://ritza.co/",
   },
   {
     position: "Automotive Technician & Service Advisor",
     company: "Jaguar Land Rover",
-    duration: "Mar 2015 - Sep 2020",
+    duration: "2015 — 2020",
     details: [
       "Developed an automation script for reporting vehicle issues, enhancing technician productivity.",
-      "Diagnosed and repaired electrical and mechanical vehicle faults, improving customer satisfaction.",
-      "Coordinated with technicians and parts department to ensure parts availability and managed dealership schedules.",
+      "Diagnosed and repaired complex electrical and mechanical vehicle faults, improving customer satisfaction.",
+      "Coordinated with teams to ensure smooth workflows and timely repairs.",
     ],
     link: "https://www.jaguarlandrover.com/",
   },
@@ -68,9 +57,11 @@ const Experience = () => {
                   <Type variant='highlight' className={styles.company}>
                     {exp.company}
                   </Type>
-                  <div className='hidden group-hover:block group-hover:animate-in transition-all'>
-                    <MoveRight />
-                  </div>
+                  {exp.link && (
+                    <div className='hidden group-hover:block group-hover:animate-in transition-all'>
+                      <MoveRight size={18} />
+                    </div>
+                  )}
                 </div>
                 <ul className={styles.details}>
                   {exp.details.map((detail, idx) => (
@@ -91,11 +82,11 @@ const Experience = () => {
 export default Experience;
 
 const styles = {
-  grid: "grid grid-cols-1 gap-10",
-  duration: "text-sm mb-0 opacity-75",
-  position: "text-l font-bold mb-3 leading-normal",
+  grid: "grid grid-cols-1 gap-6",
+  duration: "text-sm mb-0 opacity-60",
+  position: "text-base font-semibold mb-2 leading-normal text-foreground",
   company: "mb-3 group-hover:opacity-100",
-  card: "my-3 lg:flex lg:flex-row opacity-90 transition-all hover:opacity-100 group hover cursor-pointer hover:bg-slate-900/30 rounded-sm -m-6 p-6",
+  card: "my-2 lg:flex lg:flex-row opacity-80 transition-all hover:opacity-100 group cursor-pointer hover:bg-foreground/[0.03] rounded-lg -m-6 p-6",
   details: "list-disc pl-5 space-y-2 text-sm",
-  detail: "pl-5 mb-0",
+  detail: "pl-3 mb-0 text-foreground/60",
 };

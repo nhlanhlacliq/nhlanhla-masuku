@@ -12,11 +12,19 @@ const Links = [
     to: "about",
   },
   {
+    name: "Current Work",
+    to: "featured",
+  },
+  {
+    name: "Skills",
+    to: "skills",
+  },
+  {
     name: "Experience",
     to: "experience",
   },
   {
-    name: "Work",
+    name: "Projects",
     to: "projects",
   },
 ];
@@ -43,7 +51,7 @@ const Nav = ({ style }: Props) => {
                 className='w-8 opacity-50 group-hover:w-16 group-hover:opacity-100 transition-all'
                 spy={true}
               >
-                <div className='w-full bg-background h-0.5 rounded-sm transition-all' />
+                <div className='w-full bg-foreground h-0.5 rounded-sm transition-all' />
               </Link>
               <Link
                 to={item.to}

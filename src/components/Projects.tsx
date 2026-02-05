@@ -85,7 +85,6 @@ const projects = [
     technologies: ["React", "Vite", "TypeScript", "Figma"],
     link: "https://deltamaxauto.com/",
   },
-  // Add more projects as needed
 ];
 
 const RenderDialog = ({
@@ -135,10 +134,10 @@ const RenderDialog = ({
 const ProjectCard = ({ project }: { project: any }) => {
   return (
     <div className={styles.card}>
-      <div className='flex gap-4 group-hover:gap-8 transition-all cursor-pointer hover:animate-out'>
+      <div className='flex gap-3 items-center cursor-pointer'>
         <Type className={styles.title}>{project.title}</Type>
-        <div className='mt-0.5 group-hover:opacity-100 opacity-50'>
-          <MoveRight />
+        <div className='mb-4 group-hover:opacity-100 opacity-40 group-hover:translate-x-1 transition-all'>
+          <MoveRight size={18} />
         </div>
       </div>
       <Type className={styles.description}>{project.description}</Type>
@@ -156,7 +155,7 @@ const ProjectCard = ({ project }: { project: any }) => {
 const Projects = () => {
   return (
     <Section id='projects' style='flex-col'>
-      <Header title='Recent Work' />
+      <Header title='Projects' />
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <>
@@ -182,14 +181,14 @@ export default Projects;
 
 const styles = {
   grid: "grid grid-cols-1",
-  card: "my-3 group peer cursor-pointer hover:bg-slate-900/30 rounded-sm -m-6 p-6 opacity-90 hover:opacity-100",
-  title: "text-l font-bold mb-4 group-hover:text-accent-2",
-  description: "text-sm mb-5 text-left",
+  card: "my-3 group peer cursor-pointer hover:bg-foreground/[0.03] rounded-lg -m-6 p-6 opacity-80 hover:opacity-100 transition-all",
+  title: "text-base font-semibold mb-4 group-hover:text-accent-2 transition-colors",
+  description: "text-sm mb-5 text-left text-foreground/60",
 
   techList: "flex flex-wrap flex-row gap-2 mb-8",
   badge:
-    "bg-accent-2-muted rounded-full items-center justify-center items-center px-3 py-1",
-  tech: "mb-0 text-xs text-accent-2 animate-pulse",
+    "bg-accent-2-muted rounded-full items-center justify-center px-3 py-1",
+  tech: "mb-0 text-xs text-accent-2",
 
   imageContainerMobile: "grid grid-cols-3 gap-4 lg:gap-8 py-4 lg:py-8",
   imageContainerWeb: "grid grid-cols-2 gap-4 lg:gap-16 p-4 lg:p-8",

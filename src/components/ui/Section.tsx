@@ -18,5 +18,5 @@ const Section = ({ children, style, id }: Props) => {
 export default Section;
 
 const styles = {
-  content: "p-8 md:p-16 flex text-white",
+  content: "p-8 md:p-16 flex text-foreground",
 };

@@ -8,43 +8,44 @@ const About = () => {
     <Section id='about' style='flex-col'>
       <Header title='About' />
 
-      <div className={styles.content}>
+      <div>
         <Type className={styles.text}>
-          I discovered my love for technology breaking apart RC cars to figure
-          out how they worked. I nurtured this curiosity while working with cars
-          at{" "}
+          My love for technology started with pulling apart RC cars to figure out
+          how they worked. That curiosity led me to{" "}
           <strong>
             <a href='https://www.jaguarlandrover.com/' target='_blank'>
               Jaguar Land Rover
             </a>
           </strong>
-          . From fixing mechanical issues to diving into software, I was hooked
-          on the world of innovation and problem-solving.
+          , where I spent five years diagnosing complex systems and even
+          automating reporting processes — my first taste of using software to
+          solve real-world problems.
         </Type>
 
         <Type className={styles.text}>
-          Every challenge was a chance to learn something new. So, I jumped into
-          a{" "}
+          The pull towards software only grew stronger. I completed a{" "}
           <strong>
             <a href='https://www.hyperiondev.com/' target='_blank'>
               Software Engineering Bootcamp
-            </a>{" "}
-          </strong>
-          to deepen my skills. It was intense, but it opened doors to a new
-          world of coding and creativity. I also dipped my toes into{" "}
+            </a>
+          </strong>{" "}
+          and a comprehensive{" "}
+          <strong>University of Helsinki Full Stack course</strong>, then sharpened
+          my communication skills through{" "}
           <strong>
             <a href='https://ritza.co/' target='_blank'>
-              technical writing
+              technical writing at Ritza
             </a>
           </strong>
-          . Crafting articles and documentation for software-focused clients, I
-          found joy in simplifying complex concepts for others.
+          . Building freelance web applications with React, Vue.js, and Next.js
+          gave me the breadth; healthcare technology gave me the purpose.
         </Type>
 
         <Type className={styles.text}>
-          Now, I'm freelancing, turning ideas into reality for clients. From
-          designing user-friendly apps to crafting engaging websites, I'm about
-          making tech work for everyday people.
+          Today, I build human-centered applications in the healthcare space —
+          designing and developing intuitive interfaces that align technology
+          with genuine patient and provider needs. It's where my technical skills
+          and personal values converge.
         </Type>
       </div>
     </Section>
@@ -54,6 +55,5 @@ const About = () => {
 export default About;
 
 const styles = {
-  content: "",
   text: "opacity-80 mb-5 text-pretty",
 };

@@ -44,7 +44,7 @@ const getVariantClasses = (variant: variantType) => {
     case "title":
       return "text-4xl md:text-6xl my-4 font-semibold tracking-tight";
     case "subtitle":
-      return "text-xl md:text-2xl text-background/90";
+      return "text-xl md:text-2xl text-foreground/80";
 
     case "header":
       return "text-xl md:text-2xl font-semibold mb-6";

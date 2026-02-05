@@ -42,12 +42,14 @@ const About = () => {
         </Type>
 
         <Type className={styles.text}>
-          Today, I build enterprise applications that solve real business
-          problems — designing intuitive interfaces that enhance productivity
-          and user experience. Whether it's streamlining operations or
-          integrating complex systems, I focus on creating software that
-          genuinely improves how people work. It's where my technical skills and
-          problem-solving passion converge.
+          Today, I <strong>build enterprise applications</strong> that solve
+          real business problems — designing{" "}
+          <strong>
+            intuitive interfaces that enhance productivity and user experience
+          </strong>
+          . Whether it's streamlining operations or integrating complex systems,
+          I focus on creating software that genuinely improves how people work.
+          It's where my technical skills and problem-solving passion converge.
         </Type>
       </div>
     </Section>

@@ -5,15 +5,15 @@ import Type from "./ui/Type";
 
 const About = () => {
   return (
-    <Section id='about' style='flex-col'>
-      <Header title='About' />
+    <Section id="about" style="flex-col">
+      <Header title="About" />
 
       <div>
         <Type className={styles.text}>
-          My love for technology started with pulling apart RC cars to figure out
-          how they worked. That curiosity led me to{" "}
+          My love for technology started with pulling apart RC cars to figure
+          out how they worked. That curiosity led me to{" "}
           <strong>
-            <a href='https://www.jaguarlandrover.com/' target='_blank'>
+            <a href="https://www.jaguarlandrover.com/" target="_blank">
               Jaguar Land Rover
             </a>
           </strong>
@@ -25,27 +25,29 @@ const About = () => {
         <Type className={styles.text}>
           The pull towards software only grew stronger. I completed a{" "}
           <strong>
-            <a href='https://www.hyperiondev.com/' target='_blank'>
+            <a href="https://www.hyperiondev.com/" target="_blank">
               Software Engineering Bootcamp
             </a>
           </strong>{" "}
           and a comprehensive{" "}
-          <strong>University of Helsinki Full Stack course</strong>, then sharpened
-          my communication skills through{" "}
+          <strong>University of Helsinki Full Stack course</strong>, then
+          sharpened my communication skills through{" "}
           <strong>
-            <a href='https://ritza.co/' target='_blank'>
+            <a href="https://ritza.co/" target="_blank">
               technical writing at Ritza
             </a>
           </strong>
           . Building freelance web applications with React, Vue.js, and Next.js
-          gave me the breadth; healthcare technology gave me the purpose.
+          gave me the tools; making a difference to users gave me the purpose.
         </Type>
 
         <Type className={styles.text}>
-          Today, I build human-centered applications in the healthcare space —
-          designing and developing intuitive interfaces that align technology
-          with genuine patient and provider needs. It's where my technical skills
-          and personal values converge.
+          Today, I build enterprise applications that solve real business
+          problems — designing intuitive interfaces that enhance productivity
+          and user experience. Whether it's streamlining operations or
+          integrating complex systems, I focus on creating software that
+          genuinely improves how people work. It's where my technical skills and
+          problem-solving passion converge.
         </Type>
       </div>
     </Section>

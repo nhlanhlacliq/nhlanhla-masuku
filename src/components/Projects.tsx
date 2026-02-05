@@ -17,6 +17,22 @@ import { ReactNode } from "react";
 
 const projects = [
   {
+    title: "Samuel Africa",
+    description:
+      "A modern portfolio website for a human-centered design agency showcasing their work, services, and industry expertise. Features dynamic content management, project galleries, and responsive design with custom animations.",
+    technologies: [
+      "Next.js 15",
+      "React 19",
+      "Sanity CMS",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Framer Motion",
+    ],
+    link: "https://samuel.africa/",
+    images: ["/images/sa3.png", "/images/sa1.png", "/images/sa2.png"],
+    type: "web",
+  },
+  {
     title: "estConnect",
     description:
       "An app for estate residents to book amenities, request concierge services, and manage estate access. Includes an admin dashboard for posting events, handling user reports and managing the estate.",
@@ -120,7 +136,7 @@ const RenderDialog = ({
               key={idx}
               src={image}
               alt={image}
-              className='hover:scale-150 transition-all rounded-sm shadow-sm'
+              className="hover:scale-150 transition-all rounded-sm shadow-sm"
               width={project.type === "mobile" ? 1200 : 400}
               height={project.type === "mobile" ? 1200 : 400}
             />
@@ -134,9 +150,9 @@ const RenderDialog = ({
 const ProjectCard = ({ project }: { project: any }) => {
   return (
     <div className={styles.card}>
-      <div className='flex gap-3 items-center cursor-pointer'>
+      <div className="flex gap-3 items-center cursor-pointer">
         <Type className={styles.title}>{project.title}</Type>
-        <div className='mb-4 group-hover:opacity-100 opacity-40 group-hover:translate-x-1 transition-all'>
+        <div className="mb-4 group-hover:opacity-100 opacity-40 group-hover:translate-x-1 transition-all">
           <MoveRight size={18} />
         </div>
       </div>
@@ -154,13 +170,13 @@ const ProjectCard = ({ project }: { project: any }) => {
 
 const Projects = () => {
   return (
-    <Section id='projects' style='flex-col'>
-      <Header title='Projects' />
+    <Section id="projects" style="flex-col">
+      <Header title="Projects" />
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <>
             {project.link ? (
-              <a href={project.link} target='_blank'>
+              <a href={project.link} target="_blank">
                 <ProjectCard key={index} project={project} />
               </a>
             ) : (
@@ -182,12 +198,12 @@ export default Projects;
 const styles = {
   grid: "grid grid-cols-1",
   card: "my-3 group peer cursor-pointer hover:bg-foreground/[0.03] rounded-lg -m-6 p-6 opacity-80 hover:opacity-100 transition-all",
-  title: "text-base font-semibold mb-4 group-hover:text-accent-2 transition-colors",
+  title:
+    "text-base font-semibold mb-4 group-hover:text-accent-2 transition-colors",
   description: "text-sm mb-5 text-left text-foreground/60",
 
   techList: "flex flex-wrap flex-row gap-2 mb-8",
-  badge:
-    "bg-accent-2-muted rounded-full items-center justify-center px-3 py-1",
+  badge: "bg-accent-2-muted rounded-full items-center justify-center px-3 py-1",
   tech: "mb-0 text-xs text-accent-2",
 
   imageContainerMobile: "grid grid-cols-3 gap-4 lg:gap-8 py-4 lg:py-8",

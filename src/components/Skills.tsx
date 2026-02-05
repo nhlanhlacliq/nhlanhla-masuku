@@ -11,6 +11,10 @@ const skillCategories = [
       "Next.js",
       "TypeScript",
       "JavaScript",
+      "TanStack Query",
+      "TanStack Table",
+      "Radix UI",
+      "Zustand",
       "HTML5",
       "CSS3",
       "Tailwind CSS",
@@ -23,8 +27,11 @@ const skillCategories = [
       "Node.js",
       "Express",
       "Python",
+      "FastAPI",
       "RESTful APIs",
       "GraphQL",
+      "PostgreSQL",
+      "SQLAlchemy",
       "MongoDB",
       "SQL",
     ],
@@ -36,7 +43,7 @@ const skillCategories = [
       "GitHub Actions",
       "Docker",
       "CI/CD",
-      "Azure DevOps",
+      "AWS DevOps",
       "Testing & Debugging",
     ],
   },
@@ -50,12 +57,24 @@ const skillCategories = [
       "Prototyping",
     ],
   },
+  {
+    title: "Soft Skills",
+    skills: [
+      "Problem Solving",
+      "Collaboration",
+      "Technical Communication",
+      "Agile",
+      "Code Review",
+      "Stakeholder Management",
+      "User-Centered Design",
+    ],
+  },
 ];
 
 const Skills = () => {
   return (
-    <Section id='skills' style='flex-col'>
-      <Header title='Skills' />
+    <Section id="skills" style="flex-col">
+      <Header title="Skills" />
 
       <div className={styles.grid}>
         {skillCategories.map((category, idx) => (
@@ -80,7 +99,8 @@ export default Skills;
 const styles = {
   grid: "grid grid-cols-1 md:grid-cols-2 gap-6",
   category: "mb-2",
-  categoryTitle: "text-sm font-semibold text-accent-2 uppercase tracking-wider mb-3",
+  categoryTitle:
+    "text-sm font-semibold text-accent-2 uppercase tracking-wider mb-3",
   skillList: "flex flex-wrap gap-2",
   skill:
     "text-sm text-foreground/70 bg-foreground/[0.04] border border-foreground/10 px-3 py-1.5 rounded-md hover:border-accent-2/30 hover:text-foreground/90 transition-colors",

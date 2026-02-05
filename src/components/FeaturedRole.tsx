@@ -2,14 +2,17 @@ import Header from "./ui/Header";
 import Section from "./ui/Section";
 import Type from "./ui/Type";
 import ImageCarousel from "./ImageCarousel";
+import { MoveRight } from "lucide-react";
 
 const highlights = [
-  "Architected and developed a comprehensive construction management platform with job bag management, real-time task tracking, and document workflow automation",
+  "Architected and developed a comprehensive job management platform with real-time task tracking, document workflow automation, and third-party accounting integration",
   "Integrated Sage One accounting system API for seamless synchronization of quotes, invoices, receipts, purchase orders, and customer data",
   "Built advanced data tables with TanStack Table featuring complex filtering, sorting, pagination, column pinning, and persistent user preferences",
   "Implemented secure document management system with AWS S3 storage and SMB protocol support for enterprise file servers",
   "Developed role-based access control system with granular permissions for managing user capabilities across different modules",
   "Designed reusable component library with Radix UI primitives, custom table components, and form validation using React Hook Form and Zod",
+  "Led technical demos showcasing new features and architectural decisions to stakeholders and team members",
+  "Facilitated knowledge sharing sessions on modern React patterns, TypeScript best practices, and API integration strategies",
 ];
 
 const techStack = [
@@ -32,6 +35,8 @@ const techStack = [
   "Pydantic",
   "Zod",
 ];
+
+const link = "https://c2group.co.za/";
 
 // ─── Add new images here ────────────────────────────────
 const projectImages = [
@@ -69,24 +74,30 @@ const FeaturedRole = () => {
     <Section id="featured" style="flex-col">
       <Header title="Current Work" />
 
-      <div className={styles.card}>
-        <div className={styles.cardHeader}>
-          <div>
-            <Type className={styles.role}>Full Stack Developer</Type>
-            <Type variant="highlight" className={styles.company}>
-              C2 Technologies
-            </Type>
-            <Type className={styles.duration}>2022 — Present</Type>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <div className={styles.card}>
+          <div className={styles.cardHeader}>
+            <div>
+              <Type className={styles.role}>Full Stack Developer</Type>
+              <div className="flex gap-3 items-center group ">
+                <Type variant="highlight" className={styles.company}>
+                  C2 Technologies
+                </Type>
+                <div className="hidden group-hover:block group-hover:animate-in transition-all">
+                  <MoveRight size={18} />
+                </div>
+              </div>
+              <Type className={styles.duration}>2022 — Present</Type>
+            </div>
           </div>
-        </div>
 
         <Type className={styles.description}>
-          Developing enterprise-grade job management solutions that streamline
-          operations from job creation to invoicing. Building full-stack
-          applications with modern frameworks while integrating with third-party
-          accounting systems. Collaborating with stakeholders to deliver
-          intuitive, performant software that enhances productivity and data
-          accuracy.
+          Working at a technology company building enterprise solutions across
+          multiple products including Graffiti (job management), GameOn,
+          BikeWise, and LeaseTracker. Developing full-stack applications with
+          modern frameworks while integrating with third-party accounting
+          systems. Collaborating with stakeholders to deliver intuitive,
+          performant software that enhances productivity and data accuracy.
         </Type>
 
         <ul className={styles.list}>
@@ -106,7 +117,8 @@ const FeaturedRole = () => {
         </div>
 
         <ImageCarousel images={projectImages} />
-      </div>
+        </div>
+      </a>
     </Section>
   );
 };

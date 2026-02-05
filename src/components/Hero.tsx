@@ -6,17 +6,17 @@ import ThemeToggle from "./ThemeToggle";
 
 const Hero = () => {
   return (
-    <Section id='#' style={styles.section}>
-      <div className='md:max-w-none lg:max-w-[440px] xl:max-w-none'>
-        <Type variant='title'>Nhlanhla Masuku</Type>
-        <Type variant='subtitle'>Full Stack Developer</Type>
-        <div className='lg:mt-1'>
-          <Type variant='highlight'>
-            Building human-centered healthcare technology with React, Vue.js &
-            TypeScript
+    <Section id="#" style={styles.section}>
+      <div className="md:max-w-none lg:max-w-[440px] xl:max-w-none">
+        <Type variant="title">Nhlanhla Masuku</Type>
+        <Type variant="subtitle">Full Stack Developer</Type>
+        <div className="lg:mt-1">
+          <Type variant="highlight">
+            Building human-centered technology with React, Vue.js, TypeScript &
+            Python
           </Type>
         </div>
-        <Type className='text-foreground/60 text-base leading-relaxed'>
+        <Type className="text-foreground/60 text-base leading-relaxed">
           I create intuitive, accessible applications that genuinely improve
           people&apos;s lives — from front-end to full stack.
         </Type>
@@ -24,30 +24,30 @@ const Hero = () => {
       <Nav style={styles.nav} />
       <div className={styles.iconContainer}>
         <a
-          href='https://github.com/nhlanhlacliq'
-          target='_blank'
+          href="https://github.com/nhlanhlacliq"
+          target="_blank"
           className={styles.iconLink}
         >
           <Github size={28} className={styles.icon} />
         </a>
         <a
-          href='https://www.linkedin.com/in/nhlanhla-masuku'
-          target='_blank'
+          href="https://www.linkedin.com/in/nhlanhla-masuku"
+          target="_blank"
           className={styles.iconLink}
         >
           <Linkedin size={28} className={styles.icon} />
         </a>
-        <a href='tel:+27844900875' target='_blank' className={styles.iconLink}>
+        <a href="tel:+27844900875" target="_blank" className={styles.iconLink}>
           <Phone size={28} className={styles.icon} />
         </a>
         <a
-          href='mailto:nhlanhlabmasuku@gmail.com'
-          target='_blank'
+          href="mailto:nhlanhlabmasuku@gmail.com"
+          target="_blank"
           className={styles.iconLink}
         >
           <Mail size={28} className={styles.icon} />
         </a>
-        <div className='border-l border-foreground/10 pl-4 ml-1'>
+        <div className="border-l border-foreground/10 pl-4 ml-1">
           <ThemeToggle />
         </div>
       </div>

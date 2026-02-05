@@ -20,7 +20,14 @@ export default function ThemeProvider({
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) setTheme(stored);
+    // Default to system if no preference is stored, or if stored value is invalid
+    if (stored && (stored === "light" || stored === "dark" || stored === "system")) {
+      setTheme(stored);
+    } else {
+      // Ensure system is set as default and stored
+      setTheme("system");
+      localStorage.setItem("theme", "system");
+    }
   }, []);
 
   useEffect(() => {

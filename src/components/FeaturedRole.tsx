@@ -4,25 +4,33 @@ import Type from "./ui/Type";
 import ImageCarousel from "./ImageCarousel";
 
 const highlights = [
-  "Designed and built responsive web applications using React, Next.js, and TypeScript, ensuring accessibility and optimal user experience across devices",
-  "Integrated RESTful APIs and GraphQL endpoints for seamless data flow between frontend and backend systems",
-  "Implemented Vue.js components for specific modules, gaining hands-on experience with Vue 3 Composition API",
-  "Translated UI/UX designs into pixel-perfect, intuitive interfaces using HTML5, CSS3, and Tailwind CSS",
-  "Established CI/CD pipelines using GitHub Actions and Docker for automated testing and deployment",
-  "Applied security best practices including authentication, authorization, and data protection measures",
+  "Architected and developed a comprehensive construction management platform with job bag management, real-time task tracking, and document workflow automation",
+  "Integrated Sage One accounting system API for seamless synchronization of quotes, invoices, receipts, purchase orders, and customer data",
+  "Built advanced data tables with TanStack Table featuring complex filtering, sorting, pagination, column pinning, and persistent user preferences",
+  "Implemented secure document management system with AWS S3 storage and SMB protocol support for enterprise file servers",
+  "Developed role-based access control system with granular permissions for managing user capabilities across different modules",
+  "Designed reusable component library with Radix UI primitives, custom table components, and form validation using React Hook Form and Zod",
 ];
 
 const techStack = [
-  "React",
-  "Vue.js",
-  "Next.js",
+  "Next.js 15",
+  "React 19",
+  "Vue 3",
   "TypeScript",
+  "FastAPI",
+  "Python",
+  "PostgreSQL",
+  "TanStack Query",
+  "TanStack Table",
+  "Radix UI",
+  "Zustand",
   "Tailwind CSS",
-  "Node.js",
-  "RESTful APIs",
-  "GraphQL",
-  "Docker",
+  "SQLAlchemy",
+  "AWS S3",
   "GitHub Actions",
+  "JWT Auth",
+  "Pydantic",
+  "Zod",
 ];
 
 // ─── Add new images here ────────────────────────────────
@@ -66,18 +74,19 @@ const FeaturedRole = () => {
           <div>
             <Type className={styles.role}>Full Stack Developer</Type>
             <Type variant="highlight" className={styles.company}>
-              LOR
+              C2 Technologies
             </Type>
             <Type className={styles.duration}>2022 — Present</Type>
           </div>
         </div>
 
         <Type className={styles.description}>
-          Developing healthcare technology solutions focused on improving
-          patient outcomes and operational efficiency through user-centered web
-          applications. Working in close partnership with designers, backend
-          developers, and stakeholders to build compassionate, human-centered
-          software.
+          Developing enterprise-grade job management solutions that streamline
+          operations from job creation to invoicing. Building full-stack
+          applications with modern frameworks while integrating with third-party
+          accounting systems. Collaborating with stakeholders to deliver
+          intuitive, performant software that enhances productivity and data
+          accuracy.
         </Type>
 
         <ul className={styles.list}>
